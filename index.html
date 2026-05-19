@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esther Ma · Idaho Senate District 11</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blush:      #f7ede8;
+    --blush-mid:  #edcfc4;
+    --blush-deep: #d4a090;
+    --rose:       #b97060;
+    --rose-dark:  #8c4a3a;
+    --cream:      #fdfaf7;
+    --white:      #ffffff;
+    --charcoal:   #2a1f1c;
+    --warm-gray:  #7d6e69;
+    --gold:       #c4a060;
+    --gold-light: #ecdbb8;
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family:'Jost',sans-serif; background:var(--cream); color:var(--charcoal); overflow-x:hidden; }
+
+  /* NAV */
+  nav {
+    position:fixed; top:0; left:0; right:0; z-index:200;
+    background:rgba(253,250,247,0.96); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--blush-mid);
+    height:68px; display:flex; align-items:center;
+    justify-content:space-between; padding:0 56px;
+  }
+  .nav-logo { font-family:'Great Vibes',cursive; font-size:2rem; color:var(--rose-dark); text-decoration:none; line-height:1; }
+  .nav-links { display:flex; gap:32px; list-style:none; }
+  .nav-links a { font-size:0.68rem; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; color:var(--warm-gray); text-decoration:none; transition:color 0.2s; }
+  .nav-links a:hover { color:var(--rose); }
+  .nav-tag { font-size:0.6rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; background:var(--rose-dark); color:var(--white); padding:7px 16px; border-radius:1px; text-decoration:none; transition:background 0.2s; }
+  .nav-tag:hover { background:var(--rose); }
+
+  /* HERO */
+  .hero { min-height:100vh; padding-top:68px; display:grid; grid-template-columns:1.1fr 0.9fr; background:var(--white); }
+  .hero-photo {
+    position:relative; background:var(--blush);
+    min-height:600px; display:flex; align-items:center; justify-content:center; overflow:hidden;
+  }
+  .hero-photo::before {
+    content:''; position:absolute; top:-80px; left:-80px;
+    width:280px; height:280px; border-radius:50%;
+    background:var(--blush-mid); opacity:0.4; pointer-events:none;
+  }
+  .hero-photo::after {
+    content:''; position:absolute; bottom:-40px; right:-40px;
+    width:180px; height:180px; border-radius:50%;
+    background:var(--blush-deep); opacity:0.25; pointer-events:none;
+  }
+  .ph-wrap { display:flex; flex-direction:column; align-items:center; gap:14px; color:var(--blush-deep); }
+  .ph-icon { font-size:3rem; opacity:0.35; }
+  .ph-text { font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; opacity:0.5; text-align:center; max-width:160px; line-height:1.7; }
+
+  .hero-content { display:flex; flex-direction:column; justify-content:center; padding:80px 64px 80px 72px; }
+  .hero-eyebrow { font-size:0.62rem; font-weight:600; letter-spacing:0.32em; text-transform:uppercase; color:var(--rose); margin-bottom:20px; }
+  .hero-cursive { font-family:'Great Vibes',cursive; font-size:clamp(4rem,6vw,5.5rem); color:var(--rose-dark); line-height:1; margin-bottom:8px; }
+  .hero-sub-title { font-family:'Cormorant Garamond',serif; font-size:1rem; font-style:italic; color:var(--warm-gray); letter-spacing:0.06em; margin-bottom:32px; }
+  .hero-rule { width:50px; height:1px; background:var(--rose); margin-bottom:28px; }
+  .hero-tagline { font-family:'Cormorant Garamond',serif; font-size:1.45rem; font-weight:300; font-style:italic; line-height:1.65; color:var(--charcoal); max-width:380px; margin-bottom:16px; }
+  .hero-body { font-size:0.82rem; font-weight:300; line-height:1.8; color:var(--warm-gray); max-width:360px; margin-bottom:40px; }
+  .hero-body strong { color:var(--charcoal); font-weight:500; }
+  .btn-row { display:flex; gap:14px; flex-wrap:wrap; }
+  .btn-dark { background:var(--rose-dark); color:var(--white); padding:13px 30px; font-size:0.68rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none; transition:background 0.2s, transform 0.15s; display:inline-block; }
+  .btn-dark:hover { background:var(--rose); transform:translateY(-2px); }
+  .btn-outline { border:1.5px solid var(--rose-dark); color:var(--rose-dark); padding:13px 30px; font-size:0.68rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none; transition:all 0.2s; display:inline-block; }
+  .btn-outline:hover { background:var(--rose-dark); color:var(--white); }
+
+  /* TICKER */
+  .ticker { background:var(--rose-dark); padding:18px 0; overflow:hidden; }
+  .ticker-inner { display:flex; gap:56px; animation:ticker 30s linear infinite; white-space:nowrap; }
+  @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  .ti { font-family:'Cormorant Garamond',serif; font-size:0.92rem; font-style:italic; font-weight:300; color:var(--white); opacity:0.9; flex-shrink:0; letter-spacing:0.06em; }
+  .td { color:var(--gold-light); opacity:0.5; font-style:normal; }
+
+  /* DISTRICT SNAPSHOT */
+  .district { background:var(--blush); padding:80px; text-align:center; }
+  .district .sec-title { margin-bottom:14px; }
+  .d-lead { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-style:italic; font-weight:300; color:var(--warm-gray); max-width:660px; margin:0 auto 48px; line-height:1.75; }
+  .dstats { display:flex; justify-content:center; gap:2px; flex-wrap:wrap; max-width:860px; margin:0 auto; }
+  .ds { background:var(--white); padding:28px 32px; flex:1; min-width:150px; }
+  .ds-num { font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:300; color:var(--rose-dark); line-height:1; margin-bottom:6px; }
+  .ds-lbl { font-size:0.62rem; font-weight:500; letter-spacing:0.16em; text-transform:uppercase; color:var(--warm-gray); }
+
+  /* SHARED SECTION */
+  .sec-eye { font-size:0.6rem; font-weight:600; letter-spacing:0.32em; text-transform:uppercase; color:var(--rose); margin-bottom:14px; }
+  .sec-title { font-family:'Cormorant Garamond',serif; font-size:clamp(1.9rem,3.5vw,2.7rem); font-weight:300; line-height:1.2; color:var(--charcoal); margin-bottom:28px; }
+  .sec-title em { font-style:italic; color:var(--rose-dark); }
+  .section { padding:96px 80px; }
+
+  /* ABOUT */
+  .about { background:var(--white); }
+  .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
+  .at p { font-size:0.88rem; font-weight:300; line-height:1.95; color:var(--warm-gray); margin-bottom:16px; }
+  .at p strong { color:var(--charcoal); font-weight:500; }
+  .at-pull { font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-style:italic; font-weight:300; color:var(--rose-dark); border-left:3px solid var(--rose); padding-left:22px; line-height:1.6; margin:24px 0; }
+  .creds { display:flex; flex-direction:column; gap:14px; }
+  .cred { display:flex; gap:16px; background:var(--blush); padding:18px 20px; border-left:3px solid var(--rose); align-items:flex-start; }
+  .cred-ico { font-size:1.1rem; margin-top:2px; flex-shrink:0; }
+  .cred-lbl { font-size:0.57rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--rose); margin-bottom:4px; }
+  .cred-txt { font-size:0.82rem; line-height:1.6; color:var(--charcoal); }
+
+  /* ISSUES */
+  .issues { background:var(--cream); }
+  .issues-hd { text-align:center; margin-bottom:52px; }
+  .issues-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+  .ic { background:var(--white); padding:32px 26px; transition:transform 0.2s, box-shadow 0.2s; cursor:default; }
+  .ic:hover { transform:translateY(-5px); box-shadow:0 16px 48px rgba(140,74,58,0.1); z-index:2; position:relative; }
+  .ic-num { font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:300; color:var(--blush-mid); line-height:1; margin-bottom:12px; }
+  .ic-title { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:600; color:var(--rose-dark); margin-bottom:10px; }
+  .ic-body { font-size:0.8rem; font-weight:300; line-height:1.85; color:var(--warm-gray); }
+  .ic-tag { display:inline-block; margin-top:12px; font-size:0.57rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--rose); border-bottom:1px solid var(--rose); padding-bottom:2px; }
+
+  /* QUOTE */
+  .quote { background:var(--charcoal); padding:80px; text-align:center; }
+  .qm { font-family:'Cormorant Garamond',serif; font-size:5rem; color:var(--rose); line-height:0.4; display:block; margin-bottom:28px; opacity:0.35; }
+  .qt { font-family:'Cormorant Garamond',serif; font-size:clamp(1.4rem,2.8vw,2rem); font-weight:300; font-style:italic; color:var(--white); max-width:620px; margin:0 auto 20px; line-height:1.55; }
+  .qa { font-size:0.6rem; font-weight:600; letter-spacing:0.28em; text-transform:uppercase; color:var(--rose); }
+
+  /* COMMITMENT */
+  .commit { background:var(--white); display:grid; grid-template-columns:1fr 1fr; }
+  .commit-l { background:var(--blush); padding:80px; display:flex; flex-direction:column; justify-content:center; }
+  .commit-r { padding:80px; display:flex; flex-direction:column; justify-content:center; }
+  .commit-r p { font-size:0.86rem; font-weight:300; line-height:1.95; color:var(--warm-gray); margin-bottom:16px; }
+  .commit-r p strong { color:var(--charcoal); font-weight:500; }
+  .pledge { list-style:none; margin:6px 0 28px; }
+  .pledge li { font-size:0.83rem; font-weight:300; color:var(--charcoal); padding:10px 0; border-bottom:1px solid var(--blush-mid); display:flex; gap:12px; align-items:flex-start; line-height:1.6; }
+  .pledge li::before { content:'✦'; color:var(--rose); font-size:0.5rem; margin-top:5px; flex-shrink:0; }
+  .sb { margin-bottom:24px; }
+  .sb:last-child { margin-bottom:0; }
+  .sb-num { font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:300; color:var(--rose-dark); line-height:1; margin-bottom:4px; }
+  .sb-desc { font-size:0.68rem; font-weight:400; letter-spacing:0.1em; color:var(--warm-gray); text-transform:uppercase; }
+  .sb-rule { width:40px; height:1px; background:var(--blush-deep); margin:18px 0; }
+
+  /* CONTACT */
+  .contact { background:var(--blush); padding:96px 80px; text-align:center; }
+  .contact-cursive { font-family:'Great Vibes',cursive; font-size:3rem; color:var(--rose-dark); display:block; margin-bottom:8px; }
+  .contact-lead { font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-style:italic; font-weight:300; color:var(--warm-gray); margin-bottom:48px; }
+  .ccards { display:flex; justify-content:center; gap:2px; flex-wrap:wrap; max-width:760px; margin:0 auto 32px; }
+  .cc { background:var(--white); padding:26px 34px; flex:1; min-width:160px; }
+  .cc-lbl { font-size:0.57rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--rose); margin-bottom:8px; }
+  .cc-val { font-size:0.83rem; color:var(--charcoal); font-weight:400; }
+  .contact-note { font-size:0.7rem; color:var(--warm-gray); font-style:italic; }
+
+  /* FOOTER */
+  footer { background:var(--charcoal); padding:36px 80px; display:flex; justify-content:space-between; align-items:center; }
+  .foot-logo { font-family:'Great Vibes',cursive; font-size:1.6rem; color:var(--white); }
+  .foot-legal { font-size:0.58rem; letter-spacing:0.1em; color:var(--warm-gray); text-align:center; line-height:1.8; opacity:0.6; }
+  .foot-party { font-size:0.6rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--rose); }
+
+  /* FADE IN */
+  .fi { opacity:0; transform:translateY(16px); animation:fi 0.75s ease forwards; }
+  .fi:nth-child(1){animation-delay:0.1s} .fi:nth-child(2){animation-delay:0.25s}
+  .fi:nth-child(3){animation-delay:0.4s} .fi:nth-child(4){animation-delay:0.55s}
+  .fi:nth-child(5){animation-delay:0.7s} .fi:nth-child(6){animation-delay:0.85s}
+  @keyframes fi { to { opacity:1; transform:translateY(0); } }
+
+  /* RESPONSIVE */
+  @media(max-width:900px){
+    nav { padding:0 24px; } .nav-links { display:none; }
+    .hero { grid-template-columns:1fr; } .hero-photo { min-height:280px; }
+    .hero-content { padding:48px 28px; }
+    .district, .section { padding:64px 28px; }
+    .about-grid, .commit, .issues-grid { grid-template-columns:1fr; }
+    .commit-l, .commit-r { padding:56px 28px; }
+    .dstats { flex-direction:column; }
+    .contact { padding:64px 28px; }
+    footer { flex-direction:column; gap:16px; text-align:center; padding:32px 24px; }
+    .quote { padding:64px 28px; }
+  }
+
+  /*
+  ══ HOW TO ADD YOUR PHOTO ══════════════════════════
+  1. Open this file in Notepad
+  2. Find the block that starts with <div class="ph-wrap">
+     (it's inside <div class="hero-photo">)
+  3. Replace the ENTIRE <div class="ph-wrap">...</div>
+     with this one line:
+     <img src="your-photo.jpg" alt="Esther Ma"
+          style="width:100%;height:100%;object-fit:cover;object-position:top;position:absolute;inset:0;">
+  4. Put your photo file in the same folder. Save. Done!
+  ═══════════════════════════════════════════════════
+  */
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Esther Ma</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#issues">Issues</a></li>
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#commitment">My Promise</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-tag">Donate Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-photo">
+    <div class="ph-wrap" style="position:relative; width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
+      <!-- floating bubble hearts -->
+      <svg viewBox="0 0 44 40" width="44" height="40" xmlns="http://www.w3.org/2000/svg"
+           style="position:absolute; top:18%; left:10%; animation:floatA 5s ease-in-out infinite; opacity:0.45;">
+        <path d="M22,36 C22,36 2,22 2,12 C2,6 7,2 13,2 C17,2 20,4 22,8 C24,4 27,2 31,2 C37,2 42,6 42,12 C42,22 22,36 22,36 Z" fill="#edcfc4"/>
+      </svg>
+      <svg viewBox="0 0 30 27" width="30" height="27" xmlns="http://www.w3.org/2000/svg"
+           style="position:absolute; top:12%; right:14%; animation:floatB 6.5s ease-in-out infinite; opacity:0.35;">
+        <path d="M15,24 C15,24 1,15 1,8 C1,4 4,1 8,1 C11,1 13,3 15,5 C17,3 19,1 22,1 C26,1 29,4 29,8 C29,15 15,24 15,24 Z" fill="#d4a090"/>
+      </svg>
+      <svg viewBox="0 0 22 20" width="22" height="20" xmlns="http://www.w3.org/2000/svg"
+           style="position:absolute; bottom:22%; left:14%; animation:floatC 7s ease-in-out infinite; opacity:0.3;">
+        <path d="M11,18 C11,18 1,11 1,6 C1,3 3,1 6,1 C8,1 10,2 11,4 C12,2 14,1 16,1 C19,1 21,3 21,6 C21,11 11,18 11,18 Z" fill="#b97060"/>
+      </svg>
+      <svg viewBox="0 0 18 16" width="18" height="16" xmlns="http://www.w3.org/2000/svg"
+           style="position:absolute; bottom:28%; right:12%; animation:floatA 8s ease-in-out infinite 1s; opacity:0.25;">
+        <path d="M9,14 C9,14 1,9 1,5 C1,3 3,1 5,1 C7,1 8,2 9,4 C10,2 11,1 13,1 C15,1 17,3 17,5 C17,9 9,14 9,14 Z" fill="#edcfc4"/>
+      </svg>
+
+      <!-- main large heart -->
+      <svg viewBox="0 0 260 240" width="300" height="277" xmlns="http://www.w3.org/2000/svg"
+           style="filter:drop-shadow(0 12px 32px rgba(185,112,96,0.18)); position:relative; z-index:2;">
+        <path d="M130,220 C130,220 18,148 18,72 C18,38 44,16 76,16 C100,16 118,28 130,44 C142,28 160,16 184,16 C216,16 242,38 242,72 C242,148 130,220 130,220 Z"
+              fill="#edcfc4" opacity="0.75"/>
+        <path d="M130,206 C130,206 30,140 30,72 C30,44 53,28 76,28 C99,28 116,42 130,58 C144,42 161,28 184,28 C207,28 230,44 230,72 C230,140 130,206 130,206 Z"
+              fill="none" stroke="#d4a090" stroke-width="1.5" opacity="0.5"/>
+        <text x="130" y="118" text-anchor="middle" font-size="18" fill="#b97060" opacity="0.35" font-family="serif" letter-spacing="1">◇</text>
+        <text x="130" y="142" text-anchor="middle" font-size="8" fill="#b97060" opacity="0.45" font-family="Jost,sans-serif" letter-spacing="3">YOUR PHOTO</text>
+      </svg>
+    </div>
+
+    <style>
+      @keyframes floatA {
+        0%,100% { transform: translateY(0px); }
+        50%      { transform: translateY(-12px); }
+      }
+      @keyframes floatB {
+        0%,100% { transform: translateY(0px) rotate(-4deg); }
+        50%      { transform: translateY(-9px) rotate(4deg); }
+      }
+      @keyframes floatC {
+        0%,100% { transform: translateY(0px) rotate(3deg); }
+        50%      { transform: translateY(-14px) rotate(-3deg); }
+      }
+    </style>
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow fi">Idaho Senate · District 11 · Caldwell</p>
+    <h1 class="hero-cursive fi">Esther Ma</h1>
+    <p class="hero-sub-title fi">Constitution Party · General Election 2026</p>
+    <div class="hero-rule fi"></div>
+    <p class="hero-tagline fi">"Serve the people."</p>
+    <p class="hero-body fi">A Caldwell neighbor and certified healthcare professional running to bring <strong>real accountability</strong> to District 11. Serve the people — seek truth from facts.</p>
+    <div class="btn-row fi">
+      <a href="#issues" class="btn-dark">My Platform</a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- SCROLLING TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ti">Serve the People</span><span class="td">&nbsp;✦&nbsp;</span>
+    <span class="ti">Seek Truth from Facts</span><span class="td">&nbsp;✦&nbsp;</span>
+    <span class="ti">No Investigation, No Right to Speak</span><span class="td">&nbsp;✦&nbsp;</span>
+    <span class="ti">Idaho First</span><span class="td">&nbsp;✦&nbsp;</span>
+    <span class="ti">Accountability, Not Just Promises</span><span class="td">&nbsp;✦&nbsp;</span>
+    <span class="ti">Caldwell Deserves Better</span><span class="td">&nbsp;✦&nbsp;</span>
+    <!-- duplicate for seamless loop -->
+    <span class="ti">Serve the People</span><span class="td">&nbsp;✦&nbsp;</span>
+    <span class="ti">Seek Truth from Facts</span><span class="td">&nbsp;✦&nbsp;</span>
+    <span class="ti">No Investigation, No Right to Speak</span><span class="td">&nbsp;✦&nbsp;</span>
+    <span class="ti">Idaho First</span><span class="td">&nbsp;✦&nbsp;</span>
+    <span class="ti">Accountability, Not Just Promises</span><span class="td">&nbsp;✦&nbsp;</span>
+    <span class="ti">Caldwell Deserves Better</span><span class="td">&nbsp;✦&nbsp;</span>
+  </div>
+</div>
+
+<!-- DISTRICT SNAPSHOT -->
+<div class="district">
+  <p class="sec-eye">District 11</p>
+  <h2 class="sec-title">Caldwell is growing fast.<br><em>Its representation must keep up.</em></h2>
+  <p class="d-lead">District 11 covers Caldwell — one of Idaho's fastest-growing cities, with a young, working-class population facing rising costs and a government that has too often chosen insiders over the people it serves.</p>
+  <div class="dstats">
+    <div class="ds"><div class="ds-num">~74K</div><div class="ds-lbl">Caldwell residents & growing</div></div>
+    <div class="ds"><div class="ds-num">31.5</div><div class="ds-lbl">Median age — a young district</div></div>
+    <div class="ds"><div class="ds-num">$67K</div><div class="ds-lbl">Median household income</div></div>
+    <div class="ds"><div class="ds-num">38%</div><div class="ds-lbl">Hispanic residents — a diverse city</div></div>
+    <div class="ds"><div class="ds-num">12%</div><div class="ds-lbl">Poverty rate — families need relief</div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="about-grid">
+    <div class="at">
+      <p class="sec-eye">Who I Am</p>
+      <h2 class="sec-title">Your neighbor.<br><em>Actually showing up.</em></h2>
+      <p>I'm Esther Ma — a Caldwell resident, Certified Medical Assistant, and current member of the Caldwell Parks and Recreation Commission. I'm not a career politician. I have spent every working day learning to listen carefully, act precisely, and serve people when it actually matters.</p>
+      <div class="at-pull">"No investigation, no right to speak — so I will always investigate first."</div>
+      <p>District 11 is a young, working-class community growing faster than its institutions can handle. It deserves a senator who shows up, asks hard questions, and answers to the people — not to party leadership or donor networks.</p>
+    </div>
+    <div class="creds">
+      <div class="cred">
+        <div class="cred-ico">⚕</div>
+        <div>
+          <p class="cred-lbl">Healthcare Professional</p>
+          <p class="cred-txt">Certified Medical Assistant — trained in patient care and clinical administration, understanding what families face in our healthcare system.</p>
+        </div>
+      </div>
+      <div class="cred">
+        <div class="cred-ico">🏛</div>
+        <div>
+          <p class="cred-lbl">Currently Serving Caldwell</p>
+          <p class="cred-txt">Member, Caldwell Parks and Recreation Commission — supporting youth and family programming in the community I call home.</p>
+        </div>
+      </div>
+      <div class="cred">
+        <div class="cred-ico">📋</div>
+        <div>
+          <p class="cred-lbl">On the May 19 Ballot</p>
+          <p class="cred-txt">Running as Constitution Party candidate for Precinct Committeeman, Precinct 1911 — already on your primary ballot this spring.</p>
+        </div>
+      </div>
+      <div class="cred">
+        <div class="cred-ico">⚖</div>
+        <div>
+          <p class="cred-lbl">Operations & Leadership</p>
+          <p class="cred-txt">Years managing teams and complex operations under pressure — the practical, unglamorous work that real governance requires.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ISSUES -->
+<section class="section issues" id="issues">
+  <div class="issues-hd">
+    <p class="sec-eye">Platform</p>
+    <h2 class="sec-title">What I will fight for<br><em>in District 11</em></h2>
+  </div>
+  <div class="issues-grid">
+    <div class="ic">
+      <div class="ic-num">01</div>
+      <h3 class="ic-title">Transparency & Anti-Corruption</h3>
+      <p class="ic-body">Regular unannounced inspections of publicly funded programs. Full public records as a right, not a privilege. Every public dollar publicly accounted for — because accountability is not optional, it is a duty.</p>
+      <span class="ic-tag">Accountability First</span>
+    </div>
+    <div class="ic">
+      <div class="ic-num">02</div>
+      <h3 class="ic-title">Real Constituent Engagement</h3>
+      <p class="ic-body">Town halls across LD11 — year-round, not just at election time. I come to you, listen, document, act, and report back. Representation means presence, not just a distant vote cast on your behalf.</p>
+      <span class="ic-tag">Serve the People</span>
+    </div>
+    <div class="ic">
+      <div class="ic-num">03</div>
+      <h3 class="ic-title">Debt Relief & Economic Justice</h3>
+      <p class="ic-body">Caldwell families carry crushing medical and consumer debt. I support debt jubilee frameworks and working-class relief mechanisms that give ordinary District 11 residents a genuine fresh start.</p>
+      <span class="ic-tag">Families First</span>
+    </div>
+    <div class="ic">
+      <div class="ic-num">04</div>
+      <h3 class="ic-title">Reindustrialization & Local Jobs</h3>
+      <p class="ic-body">Canyon County's economy should be built by Canyon County workers. I support bringing skilled trades and real manufacturing back — so prosperity is grown here, not imported from outside.</p>
+      <span class="ic-tag">Idaho First</span>
+    </div>
+    <div class="ic">
+      <div class="ic-num">05</div>
+      <h3 class="ic-title">Constitutional Fidelity</h3>
+      <p class="ic-body">Idaho's Constitution is the supreme law of this state. I will work to codify and centralize state statute so every citizen can understand the laws that govern them — and hold government strictly accountable to them.</p>
+      <span class="ic-tag">Rule of Law</span>
+    </div>
+    <div class="ic">
+      <div class="ic-num">06</div>
+      <h3 class="ic-title">Family & Community First</h3>
+      <p class="ic-body">Parents are the primary advocates for their children. I support parental rights, investment in local parks, recreation, and health — the community infrastructure that makes Caldwell worth raising a family in.</p>
+      <span class="ic-tag">Parents First</span>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE BAND -->
+<div class="quote">
+  <span class="qm">"</span>
+  <p class="qt">If Fate didn't expect me — good.<br>Caldwell deserves someone who surprises them.</p>
+  <p class="qa">Esther Ma · Idaho Senate · District 11 · 2026</p>
+</div>
+
+<!-- PHILOSOPHY SECTION -->
+<section class="section" style="background:var(--white);" id="philosophy">
+  <div style="max-width:760px; margin:0 auto; text-align:center;">
+    <p class="sec-eye">What I Believe</p>
+    <h2 class="sec-title">Seek truth from facts.<br><em>Then act on what you find.</em></h2>
+    <p style="font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:300; font-style:italic; line-height:1.85; color:var(--warm-gray); margin-bottom:28px;">
+      I believe every system — no matter how entrenched — can be shaken and renewed. The old gives way to the new. That is not idealism. That is history.
+    </p>
+    <p style="font-size:0.88rem; font-weight:300; line-height:1.95; color:var(--warm-gray); margin-bottom:18px;">
+      I believe the purpose of government is not to accumulate power or protect its own administration — it is to serve the people it represents, investigate what is broken, and act on what it finds. A government that has stopped asking hard questions has stopped working.
+    </p>
+    <p style="font-size:0.88rem; font-weight:300; line-height:1.95; color:var(--warm-gray); margin-bottom:18px;">
+      I believe in the dignity of working people. In the right of every family to know the laws that govern them. In the obligation of every elected official to show up — not just on election day, but every day after.
+    </p>
+    <p style="font-size:0.88rem; font-weight:300; line-height:1.95; color:var(--warm-gray);">
+      Canyon County is not a stepping stone. It is home. And home deserves someone who treats it that way.
+    </p>
+    <div style="width:50px; height:1px; background:var(--rose); margin:36px auto 0;"></div>
+  </div>
+</section>
+
+<!-- SEEK TRUTH QUOTE -->
+<div style="background:var(--blush); padding:56px 80px; text-align:center;">
+  <p style="font-family:'Cormorant Garamond',serif; font-size:0.7rem; font-weight:600; letter-spacing:0.32em; text-transform:uppercase; color:var(--rose); margin-bottom:16px;">On Governance</p>
+  <p style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:300; font-style:italic; color:var(--charcoal); max-width:600px; margin:0 auto 16px; line-height:1.6;">
+    "Seek truth from facts — not from comfort, not from habit, not from what is convenient to believe."
+  </p>
+  <p style="font-size:0.6rem; font-weight:600; letter-spacing:0.28em; text-transform:uppercase; color:var(--rose-dark);">Esther Ma · Idaho Senate Candidate · District 11</p>
+</div>
+
+
+<div class="commit" id="commitment">
+  <div class="commit-l">
+    <p class="sec-eye">By the Numbers</p>
+    <h2 class="sec-title" style="margin-bottom:32px;">What you can<br><em>hold me to.</em></h2>
+    <div class="sb"><div class="sb-num">LD11</div><div class="sb-desc">My only focus — no outside ambitions</div></div>
+    <div class="sb-rule"></div>
+    <div class="sb"><div class="sb-num">100%</div><div class="sb-desc">Public record of votes, meetings & commitments</div></div>
+    <div class="sb-rule"></div>
+    <div class="sb"><div class="sb-num">0</div><div class="sb-desc">Backroom deals. Zero. On record.</div></div>
+    <div class="sb-rule"></div>
+    <div class="sb"><div class="sb-num">Every</div><div class="sb-desc">Town hall, inspection & call — documented & shared</div></div>
+  </div>
+  <div class="commit-r">
+    <p class="sec-eye">My Promise to District 11</p>
+    <h2 class="sec-title">Government that<br><em>earns your trust.</em></h2>
+    <p>I have spent my working life showing up — to clinics, commission meetings, and community spaces — listening before speaking, then acting. That is the only model of governance I know.</p>
+    <ul class="pledge">
+      <li>Regular town halls across all of District 11, year-round</li>
+      <li>In-person inspections of publicly funded programs and offices</li>
+      <li>Full transparency on votes, meetings, and correspondence</li>
+      <li>A constituent response commitment — I will return your call</li>
+      <li>District 11 constituents come first, always</li>
+    </ul>
+    <a href="#contact" class="btn-dark">Join the Campaign</a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact" id="contact">
+  <span class="contact-cursive">Let's talk.</span>
+  <p class="contact-lead">Every conversation starts with listening.</p>
+  <div class="ccards">
+    <div class="cc"><p class="cc-lbl">Email</p><p class="cc-val">estherma.cma@gmail.com</p></div>
+    <div class="cc"><p class="cc-lbl">Phone</p><p class="cc-val">(208) 614-8451</p></div>
+    <div class="cc"><p class="cc-lbl">District</p><p class="cc-val">Caldwell · LD11 · Canyon County</p></div>
+    <div class="cc"><p class="cc-lbl">Party</p><p class="cc-val">Constitution Party of Idaho</p></div>
+  </div>
+  <p class="contact-note">Campaign website coming soon · Follow for town hall dates & updates</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="foot-logo">Esther Ma</span>
+  <div class="foot-legal">
+    Paid for by Esther Ma for Idaho Senate · Constitution Party of Idaho · District 11<br>
+    Caldwell, Idaho · General Election 2026
+  </div>
+  <span class="foot-party">Constitution Party of Idaho</span>
+</footer>
+
+</body>
+</html>
